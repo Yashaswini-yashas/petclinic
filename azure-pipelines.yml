@@ -21,3 +21,8 @@ steps:
     goals: 'package'
     
   
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(system.defaultworkingdirectory)'
+    Contents: '/target/petclinic.war'
+    TargetFolder: '$(build.artifactstagingdirectory)'
