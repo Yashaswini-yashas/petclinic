@@ -20,3 +20,14 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+
+- task: SonarQubePrepare@4
+  inputs:
+    SonarQube: 'SonarQube'
+    scannerMode: 'CLI'
+    configMode: 'manual'
+    cliProjectKey: 'PET'
+    cliProjectName: 'PETCLINIC'
+    cliSources: '.'
+    
+- task: SonarQubeAnalyze@4
