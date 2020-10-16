@@ -20,16 +20,7 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
 
-- task: SonarQubePrepare@4
-  inputs:
-    SonarQube: 'SonarQube'
-    scannerMode: 'CLI'
-    configMode: 'manual'
-    cliProjectKey: 'PET:master'
-    cliProjectName: 'PetClinic'
-    cliSources: '.'
-    
-- task: SonarQubeAnalyze@4
+
 
 - task: CopyFiles@2
   inputs:
