@@ -32,3 +32,12 @@ steps:
     
 - task: SonarQubeAnalyze@4
 
+- task: nexusArtifactUpload@0
+  inputs:
+    serverEndpoint: 'nexusendpoint'
+    repositoryId: 'PETCLINIC'
+    groupId: 'com.cg'
+    artifactId: 'petclinic'
+    artifactVersion: '1.0'
+    packaging: '.war'
+    fileName: '/'
