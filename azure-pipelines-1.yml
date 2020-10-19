@@ -51,4 +51,14 @@ steps:
     artifactId: 'petclinic'
     artifactVersion: '1.0'
     packaging: 'war'
-    fileName: '$(Build.ArtifactStagingDirectory)/**/*.war'
+    fileName: '/home/vsts/work/1/s/**/*.war'
+  
+- task: DownloadArtifactsNexusMavenRepository@2
+  inputs:
+      NexusConnection: 'Sonatype-Nexus'
+      RepositoryId: 'PETCLINIC'
+      GroupId: 'com.cg'
+      ArtifactId: 'petclinic'
+      BaseVersion: '1.0'
+      Packaging: 'war'
+      DownloadPath: '$(System.ArtifactsDirectory)'
