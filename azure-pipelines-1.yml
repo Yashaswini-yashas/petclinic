@@ -51,4 +51,4 @@ steps:
     artifactId: 'petclinic'
     artifactVersion: '1.0'
     packaging: 'war'
-    fileName: '$(build.artifactstagingdirectory)/**/*.war'
+    fileName: '$(Build.ArtifactStagingDirectory)/**/*.war'
