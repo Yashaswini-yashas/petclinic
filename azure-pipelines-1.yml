@@ -31,3 +31,4 @@ steps:
     cliSources: '.'
     
 - task: SonarQubeAnalyze@4
+
