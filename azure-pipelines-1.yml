@@ -49,7 +49,7 @@ steps:
     repositoryId: 'PETCLINIC'
     groupId: 'com.cg'
     artifactId: 'petclinic'
-    artifactVersion: '1.0'
+    artifactVersion: '$(Build.BuildNumber)'
     packaging: 'war'
     fileName: '/home/vsts/work/1/a/target/petclinic.war'
   
@@ -59,7 +59,7 @@ steps:
       RepositoryId: 'PETCLINIC'
       GroupId: 'com.cg'
       ArtifactId: 'petclinic'
-      BaseVersion: '1.0'
+      BaseVersion: '$(Build.BuildNumber)'
       Packaging: 'war'
       DownloadPath: '$(System.ArtifactsDirectory)'
 
@@ -80,4 +80,4 @@ steps:
     azureSubscription: 'java-app'
     appType: 'webApp'
     WebAppName: 'petclinic-webapplication'
-    packageForLinux: '$(System.ArtifactsDirectory)/petclinic-1.0.war'
+    packageForLinux: '$(System.ArtifactsDirectory)/petclinic-$(Build.BuildNumber).war'
